@@ -28,10 +28,11 @@ def load_data(page):
         options.add_argument('start-maximized')
         currentpath = os.getcwd()
         pl = platform.system()
+        arch = platform.machine()
         
         chromedriver = 'chromedriver.exe' if pl == 'Windows' else 'chromedriver'
         driver = webdriver.Chrome(executable_path=f'{currentpath}/web_driver/{chromedriver}', options=options)
-        print(f'Webdriver is loaded for: {pl}')
+        print(f'Webdriver is loaded for: {pl}, {arch}')
 
         wait = WebDriverWait(driver, 10)
 
